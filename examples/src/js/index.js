@@ -84,8 +84,6 @@ class App extends React.Component {
         break;
     }
 
-    console.log(duration, type, easing)
-
     return (
       <div>
         <div className="canvas">
