@@ -51,7 +51,7 @@ I'd recommend pinning to a specific version and using `--save-exact` and `--save
 
     ```javascript
     const options = {
-      bind: 'all', // Default, update on all events
+      bind: 'update', // Default, update on all events
       startOnMount: true, // Default
       stopOnUnmount: true // Default
     };
