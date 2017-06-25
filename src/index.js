@@ -22,7 +22,7 @@
   function getReactSlik (Slik, React, createReactClass) {
     function animate (Component, animations, options) {
       options = getDefault(options, {}) || {};
-      var bind = getDefault(options.bind, 'all');
+      var bind = getDefault(options.bind, 'update');
       var startOnMount = getDefault(options.startOnMount, true);
       var stopOnUnmount = getDefault(options.stopOnUnmount, true);
 
