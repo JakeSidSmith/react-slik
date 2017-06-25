@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
+
+set -e
 
 BRANCH=gh-pages # Branch to deploy to, probably gh-pages
 DIST_DIR=examples  # Location of build static files to deploy
@@ -17,11 +19,7 @@ if [ ! -d "$DIST_DIR" ]; then
   exit
 fi
 
-set -e
-
 echo "> Starting deployment to Github Pages"
-
-# Setup Details for deploy commit
 
 # Clone existing deployment branch into temp directory
 mkdir $DEPLOY_DIR
@@ -33,7 +31,7 @@ rsync -rv $DIST_DIR/* circle.yml --exclude=.eslintrc $DEPLOY_DIR
 # Commit changes
 cd $DEPLOY_DIR
 git config user.email "jake@dabapps.com"
-git config user.name "Automated Example Deployer"
+git config user.name "Automated Deployment"
 git add -f .
 git commit -m "Deployment - build $CIRCLE_BUILD_NUM"
 
